@@ -10,6 +10,7 @@ Swatch Internet Time Library for Ruby
     using BeatTime
 
     bt = Time.now.to_beat # convert a Time to a beat time represented by Rational
+    t = Time.from_beat(393.98) # convert a beat time to a Time
     t = Time.parse_beat("@393.98") # parse a beat time
 
 ### As a command

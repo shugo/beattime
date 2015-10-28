@@ -8,8 +8,12 @@ module BeatTime
   end
 
   refine Time.singleton_class do
+    def from_beat(b)
+      Time.at(b / 1000 * (24 * 60 * 60) - 60 * 60)
+    end
+
     def parse_beat(s)
-      Time.at(s.delete("@").to_r / 1000 * (24 * 60 * 60) - 60 * 60)
+      from_beat(s.delete("@").to_r)
     end
   end
 end
